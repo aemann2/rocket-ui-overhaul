@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #020202;
+  font-family: Arial, Verdana, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-width: 440px;
+}
+
+@media (min-width: 900px) {
+  body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.modal {
+  position: static;
+  width: 300px;
+  margin: 1rem auto 0 auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 14px;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  -webkit-animation: slide-down 300ms ease-out forwards;
+          animation: slide-down 300ms ease-out forwards;
+}
+
+.modal :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.modal h2 {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.modal button {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+@media (min-width: 900px) {
+  .modal {
+    position: absolute;
+    width: 300px;
+    left: calc(80% - 20rem);
+  }
+}
+
+@-webkit-keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.launch {
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid silver;
+}
+
+.launch h2 {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.launch h2:hover {
+  color: gold;
+}
+
+.launches {
+  display: block;
+  width: 400px;
+  margin: 5rem auto 0 auto;
+}
+
+.launches__heading {
+  color: #f1eded;
+  font-size: 3rem;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+.launches__container {
+  color: #f1eded;
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.launches__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.launches button {
+  cursor: pointer;
+  width: 100px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: white;
+}
+
+.launches button:hover {
+  background-color: gold;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ffffff #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #020202;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 3px none #ffffff;
+}
+/*# sourceMappingURL=styles.css.map */

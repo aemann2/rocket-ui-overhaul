@@ -1,0 +1,16 @@
+.launch {
+	margin: 1rem 0;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid silver;
+
+	h2 {
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			color: gold;
+		}
+	}
+}
