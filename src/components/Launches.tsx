@@ -4,7 +4,7 @@ import { LaunchState } from '../types/types';
 import Launch from './Launch';
 
 const Launches = () => {
-	const { loading, launches, getLaunches, toggleLaunchModal } =
+	const { loading, launches, showModal, getLaunches, toggleLaunchModal } =
 		useContext<LaunchState>(LaunchContext);
 
 	useEffect(() => {
@@ -14,7 +14,7 @@ const Launches = () => {
 
 	const handleClick = (endpoint?: string) => {
 		getLaunches(endpoint);
-		toggleLaunchModal();
+		if (showModal) toggleLaunchModal();
 	};
 
 	const Launches = launches.map((launch, index) => {
