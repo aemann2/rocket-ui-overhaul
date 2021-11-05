@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useCallback } from 'react';
 import { LaunchStateInitial } from '../types/types';
 import launchService from '../services/LaunchService';
 import rocketService from '../services/RocketService';
@@ -25,7 +25,8 @@ const LaunchProvider: React.FC = ({ children }) => {
 		initialState
 	);
 
-	const getLaunches = (type: string) => {
+	// adding useCallback to prevent the function from being re-rendered / re-executed by useEffect every time any state changes
+	const getLaunches = useCallback((type: string) => {
 		dispatchLaunchAction({ type: 'SET_LOADING', payload: true });
 		launchService
 			.get(type)
@@ -35,7 +36,7 @@ const LaunchProvider: React.FC = ({ children }) => {
 				dispatchLaunchAction({ type: 'SET_LOADING', payload: false });
 			})
 			.catch((err) => console.log(err));
-	};
+	}, []);
 
 	const getRocketData = (type: string) => {
 		rocketService

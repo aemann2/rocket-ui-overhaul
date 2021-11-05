@@ -9,8 +9,7 @@ const Launches = () => {
 
 	useEffect(() => {
 		getLaunches();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [getLaunches]);
 
 	const handleClick = (endpoint?: string) => {
 		getLaunches(endpoint);
